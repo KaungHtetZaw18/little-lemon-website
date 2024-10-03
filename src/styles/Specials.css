@@ -1,0 +1,125 @@
+.specials {
+  padding: 3rem 2rem;
+  text-align: center;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.specials-header {
+  display: flex;
+  justify-content: space-between; /* Spread out the heading and button */
+  align-items: center; /* Vertically align both elements */
+  width: 100%;
+  max-width: 1200px; /* Match the container width */
+  margin-bottom: 2rem;
+  margin-top: 8rem;
+}
+
+.specials-header h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333333;
+  margin: 0 50px; /* Remove default margins to align better */
+}
+
+.online-menu-button {
+  background-color: #F4CE14;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  border-radius: 12px;
+  cursor: pointer;
+  margin: 0 50px; /* Remove margin from bottom */
+}
+
+.specials-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Make the grid responsive */
+  gap: 2rem;
+  justify-items: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.special-card {
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  transition: transform 0.3s ease;
+  width: 100%;
+  max-width: 300px;
+}
+
+.special-card:hover {
+  transform: translateY(-5px);
+}
+
+.special-image {
+  width: 100%;
+  height: 200px;
+  background-repeat: no-repeat;
+  border-bottom: 3px solid #F4CE14;
+}
+
+.special-info {
+  padding: 1rem;
+}
+
+.special-title-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.special-title-price h3 {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.special-price {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #E67E22;
+}
+
+.special-description {
+  font-size: 1rem;
+  color: #666666;
+  margin-bottom: 1rem;
+}
+
+.special-order {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.order-delivery-button {
+  background-color: #495E57;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  border: none;
+  display: flex; /* Ensure the button and icon align properly */
+  align-items: center; /* Align the text and icon vertically */
+  gap: 0.5rem; /* Add some space between the text and the icon */
+}
+
+.order-delivery-button:hover {
+  background-color: #F4CE14;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  display: inline-block; /* Ensure it sits next to the button text */
+}

@@ -1,0 +1,100 @@
+/* Header styling */
+.header {
+  display: flex;
+  justify-content: space-between;  /* Logo on the left, nav/menu toggle on the right */
+  align-items: center;  /* Center logo and dropdown vertically */
+  padding: 10px 20px;  /* Reduce padding */
+  background-color: white;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+/* Logo styling */
+.header-logo img {
+  width: 160px;  /* Slightly smaller logo to fit better */
+  max-width: 100%;  /* Ensure responsiveness */
+  height: auto;  /* Maintain aspect ratio */
+}
+
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  z-index: 100;  /* Ensure the navigation has a high z-index */
+}
+
+/* Navigation list styling */
+.nav-list {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-list li {
+  list-style: none;
+  background-color: transparent;  /* Invisible by default */
+  border-radius: 8px;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-list li:hover {
+  background-color: whitesmoke;  /* Show color on hover */
+  transform: translateY(-3px);  /* Lift the box slightly on hover */
+}
+
+.nav-list li:active {
+  background-color: whitesmoke;  /* Even darker when active */
+}
+
+/* Menu toggle icon styling */
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+}
+
+.menu-toggle img {
+  width: 30px;
+  height: 30px;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 900px) {
+  .nav-list {
+    display: none;  /* Hide the navigation list by default */
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: white;
+    width: 200px;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    z-index: 999;  /* Ensure the dropdown is above everything else */
+  }
+
+  .nav-list.open {
+    display: flex;  /* Show the menu when toggled open */
+  }
+
+  .menu-toggle {
+    display: block;  /* Show the menu toggle button on small screens */
+    z-index: 1000;  /* Ensure the menu button is on top */
+  }
+
+  .nav-list li {
+    margin-bottom: 15px;  /* Add spacing for mobile menu items */
+    padding: 15px 20px;
+  }
+
+  .nav-list a {
+    font-size: 18px;  /* Increase font size for mobile */
+  }
+}
+
+/* Ensure the form or other content doesn't block the dropdown */
+.transparent-booking-form {
+  position: relative;
+  z-index: 1;  /* Keep the form below the dropdown */
+}

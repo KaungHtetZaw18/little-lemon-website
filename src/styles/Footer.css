@@ -1,0 +1,53 @@
+.footer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Make the grid responsive */
+  gap: 1; /* Reduce the gap between sections */
+  background-color: #495E57;
+  color: #fff;
+  padding: 2rem 0; /* Reduce overall padding */
+  width: 100%;
+  text-align: center; /* Center the text */
+}
+.footer-logo img {
+  width: 150px; /* Reduce logo size */
+  height: auto;
+  margin-bottom: 1rem; /* Add some space below the logo */
+  background-color: #fff; /* Add white background to the logo */
+  padding: 0.5rem 0; /* Add padding to ensure the background is visible */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow around the logo */
+  border-radius: 10px; /* Add slight rounding to the corners */
+}
+
+
+.footer-nav h3, .footer-contact h3, .footer-social h3 {
+  font-size: 1.25rem;
+  color: #F4CE14;
+  margin-bottom: 0.5rem; /* Reduce margin below headings */
+}
+
+.footer-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0; /* Remove default margin */
+}
+
+.footer-nav ul li {
+  margin-bottom: 0.3rem; /* Reduce spacing between navigation items */
+}
+
+.footer-nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.footer-nav ul li a:hover {
+  color: #F4CE14;
+}
+
+.footer-contact p, .footer-social p {
+  color: #fff;
+  font-size: 1rem;
+  margin: 0.2rem 0; /* Reduce spacing between paragraphs */
+}
+

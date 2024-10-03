@@ -1,0 +1,101 @@
+.hero {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); /* 12-column grid */
+  gap: 1rem; /* Space between text and image */
+  justify-items: center; /* Horizontally center the grid items */
+  padding: 20px 100px; /* Minimal padding at the top */
+  background-color: #495E57;
+  color: white;
+  height: 80vh; /* Reduced height */
+  justify-content: center; /* Center the content horizontally */
+  align-items: flex-start; /* Align the content to the top */
+  position: relative; /* Needed for the image to go outside */
+}
+
+.hero-content {
+  grid-column: 1 / span 6; /* The text takes up 6 columns */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center the content vertically */
+  margin-left: 100px;
+}
+
+.hero h1 {
+  font-size: 64px;
+  color: #F4CE14;
+}
+
+.hero h2 {
+  font-size: 40px;
+  color: white;
+}
+
+.hero p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  max-width: 500px; /* Limit the width of the paragraph for better readability */
+  text-align: left; /* Ensure the text flows like a paragraph */
+  white-space: normal; /* Ensure text breaks properly into lines */
+}
+
+.hero-button {
+  background-color: #F4CE14;
+  color: #333;
+  padding: 8px 15px; /* Reduce the padding to make the button smaller */
+  border: none;
+  border-radius: 8px; /* Slightly round the corners */
+  font-size: 14px; /* Reduce the font size */
+  max-width: 160px; /* Set a smaller maximum width */
+  cursor: pointer;
+  text-align: center; /* Ensure the text is centered */
+}
+
+.hero-button:hover {
+  background-color: #e1b912;
+}
+
+.hero-image-container {
+  grid-column: 7 / span 5; /* The image takes up 5 columns */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align the image to the top */
+  position: relative;
+  bottom: -20px;
+  left: 100px;
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 400px; /* Adjust the image size */
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+
+}
+
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr; /* Single column layout for smaller screens */
+    padding: 40px 20px;
+    text-align: center;
+    height: auto; /* Make height auto for smaller screens */
+  }
+
+  .hero-content {
+    grid-column: 1 / span 12; /* Full width for the content */
+    margin-bottom: 20px;
+  }
+
+  .hero-image-container {
+    grid-column: 1 / span 12; /* Full width for the image */
+    align-items: flex-start; /* Align the image to the top */
+    position: static; /* Make sure it stays within the container on mobile */
+  }
+
+  .hero-image {
+    max-width: 100%; /* Make the image full width on smaller screens */
+    position: static; /* Remove the relative positioning on smaller screens */
+  }
+}
