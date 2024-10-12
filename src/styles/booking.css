@@ -8,7 +8,15 @@
   flex-direction: column;
   justify-content: space-between;
 }
-
+.booking-container h2 {
+  font-size: 28px; /* Set the font size */
+  color: #333; /* Set a dark color for the heading */
+  text-align: center; /* Center the heading text */
+  margin-bottom: 20px; /* Add some space below the heading */
+  font-weight: bold; /* Make the heading bold */
+  border-bottom: 2px solid #f4ce14; /* Add a bottom border in Little Lemon theme color */
+  padding-bottom: 10px; /* Add padding below the text */
+}
 /* Header styling */
 .header {
   display: flex;

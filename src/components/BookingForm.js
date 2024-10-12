@@ -16,7 +16,7 @@ const BookingForm = () => {
     occasion: '',
     specialRequest: '',
   });
- 
+
   const [errors, setErrors] = useState({});
 
   useEffect(() => {
@@ -71,6 +71,7 @@ const BookingForm = () => {
 
   return (
     <div className="booking-container">
+      <h2>Book Now</h2> {/* Added heading */}
       <form onSubmit={handleSubmit}>
         <label>
           Full Name:
@@ -139,7 +140,7 @@ const BookingForm = () => {
               </option>
             ))}
           </select>
-          {errors.time && <span className="error -message">{errors.time}</span>}
+          {errors.time && <span className="error-message">{errors.time}</span>}
         </label>
 
         <label>
@@ -170,7 +171,7 @@ const BookingForm = () => {
           Special Requests:
           <textarea
             name="specialRequest"
-            value={formData.specialRequest }
+            value={formData.specialRequest}
             onChange={handleChange}
             placeholder="Any special requests or notes?"
           />
