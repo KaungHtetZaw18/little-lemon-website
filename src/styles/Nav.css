@@ -1,0 +1,93 @@
+/* Basic Styles */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px; /* Adjusted padding for left and right */
+    background-color: #fff; /* Background color */
+    position: relative; /* For positioning the mobile menu */
+    z-index: 1000; /* Ensure it's above other elements */
+    width: 100%;
+    text-align: center;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Style for navigation links */
+.nav-links a {
+    text-decoration: none;
+    color: #333; /* Text color */
+    font-weight: 500;
+    padding: 10px 15px;
+    transition: color 0.3s, background-color 0.3s;
+    text-align: center;
+}
+
+.nav-links a:hover {
+    color: #F4CE14; /* Lemon color on hover */
+}
+
+/* Hamburger menu icon */
+.mobile-menu-icon {
+    display: none; /* Hidden by default for desktop */
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+/* Remove hover effect for the hamburger menu */
+.mobile-menu-icon:hover {
+    background: none;
+    color: inherit; /* Retain the original color */
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .nav {
+        position: relative; /* Allow positioning of the mobile menu */
+    }
+
+    .nav-links {
+        display: none; /* Hide nav links by default on mobile */
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Positioned below the header */
+        right: 20px; /* Align the menu with the hamburger icon */
+        background: #fff;
+        border: 1px solid #ddd;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow */
+        text-align: center; /* Align text to the left */
+        z-index: 999;
+        width: 200px; /* Set a width for the mobile menu */
+        border-radius: 5px; /* Rounded corners */
+    }
+
+    .nav.mobile .nav-links {
+        display: flex; /* Show nav links when mobile menu is active */
+    }
+
+    .mobile-menu-icon {
+        display: block; /* Show the mobile menu icon on small screens */
+        color: #333;
+    }
+
+    .nav-links a {
+        padding: 10px 20px; /* Add padding for better touch interaction */
+        width: 100%;
+        display: block;
+        color: #333;
+        text-align: center; /* Align text to the left */
+    }
+
+    .nav-links a:hover {
+        background-color: #f8f8f8; /* Slightly different hover effect for mobile */
+        color: #F4CE14; /* Keep hover color consistent */
+    }
+}

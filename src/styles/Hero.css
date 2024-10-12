@@ -6,7 +6,7 @@
   padding: 20px 100px; /* Minimal padding at the top */
   background-color: #495E57;
   color: white;
-  height: 80vh; /* Reduced height */
+  height: 550px; /* Reduced height */
   justify-content: center; /* Center the content horizontally */
   align-items: flex-start; /* Align the content to the top */
   position: relative; /* Needed for the image to go outside */

@@ -6,7 +6,8 @@ import Specials from './components/Specials';
 import Testimonials from './components/Testimonials';
 import About from './components/About';
 import Footer from './components/Footer';
-import BookingPage from './components/BookingPage';  // Your BookingPage component
+import BookingPage from './components/BookingPage';
+import { BookingProvider } from './components/BookingContext';
 import './App.css';  // Ensure this path is correct
 
 function HomePage() {
@@ -33,16 +34,15 @@ function HomePage() {
 
 function App() {
   return (
+    <BookingProvider>
     <Router>
-      <Routes>
-        {/* Home Page route */}
-        <Route path="/" element={<HomePage />} />
-        
-        {/* Booking Page route */}
-        <Route path="/booking" element={<BookingPage />} />
-      </Routes>
-    </Router>
-  );
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/booking" element={<BookingPage />} />
+    </Routes>
+  </Router>
+  </BookingProvider>
+   );
 }
 
 export default App;

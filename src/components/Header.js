@@ -1,20 +1,17 @@
 import React from 'react';
-import Nav from './Nav';  // Import Nav component
-import { Link } from 'react-router-dom';  // Import Link from react-router-dom
-import '../styles/Header.css';
+import { Link } from 'react-router-dom'; // If using React Router for navigation
+import Nav from './Nav';
+import '../styles/Header.css'; // Import CSS for styling
 import logo from '../assets/Logo.svg';
-
-function Header() {
+const Header = () => {
   return (
     <header className="header">
-      <div className="header-logo">
-        <Link to="/">  {/* Clickable logo that navigates to homepage */}
-          <img src={logo} alt="Little Lemon Logo" />
-        </Link>
+      <div className="logo">
+      <Link to="/"><img src={logo} alt="Little Lemon" /></Link>
       </div>
-      <Nav />  {/* Navbar with Link components */}
+      <Nav />
     </header>
   );
-}
+};
 
 export default Header;

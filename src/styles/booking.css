@@ -1,118 +1,183 @@
-/* Booking.css */
 
-/* Full-page background image */
-.booking-wrapper {
-  position: relative;
+.booking-page {
+  background-image: url('../assets/restaurant-background.jpg'); /* Path to your background image */
+  background-size: cover;
+  background-position: center;
   min-height: 100vh;
-  background: url('../assets/restaurant-background.jpg') no-repeat center center/cover;  /* Add restaurant background */
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
+  justify-content: space-between;
 }
 
-/* Centered header and text */
-.booking-text {
-  text-align: center;
-  margin-bottom: 40px;
-  color: white;
-}
-
-.booking-text h2 {
-  font-size: 2.5rem;
-  font-weight: 600;
-  color: white;
-}
-
-.booking-text p {
-  font-size: 1.25rem;
-  margin-top: 10px;
-}
-
-.transparent-booking-form {
-  background-color: rgba(255, 255, 255, 0.85);  /* Transparent background */
-  padding: 40px;
-  border-radius: 15px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  max-width: 1000px;  /* Adjust the width as needed */
-  width: 100%;
+/* Header styling */
+.header {
   display: flex;
-  flex-direction: column;  /* Ensures inputs are stacked vertically */
-  gap: 20px;  /* Adds space between form fields */
-  transition: all 0.3s ease;
-  align-items: flex-start;  /* Aligns form elements to the left */
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  background-color: white;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-/* Input styling with left alignment */
-.form-group {
-  width: 100%;  /* Make form fields take up full width */
+.header-logo img {
+  width: 150px;
+  height: auto;
 }
 
-.form-group label {
+/* Nav links */
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  gap: 30px; /* Space between the links */
+  list-style-type: none;
+}
+
+.nav-list li {
+  list-style: none;
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: #333; /* Dark color for the links */
+  font-size: 18px;
+}
+
+.nav-list a:hover {
+  color: #f4ce14; /* Change color on hover (Little Lemon theme) */
+}
+
+/* Booking Header */
+.booking-header {
+  text-align: center;
+  color: white;
+  padding: 50px;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+}
+
+.booking-header h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.booking-header p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+/* Transparent form background */
+.booking-container {
+  background-color: rgba(255, 255, 255, 0.9); /* Transparent white background */
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 40px auto;
+}
+
+/* General form styling */
+/* General form styling */
+form label {
+  display: block;
+  margin-bottom: 8px;
   font-weight: bold;
   color: #333;
-  margin-bottom: 8px;
 }
 
-.form-group input,
-.form-group select {
-  padding: 12px 15px;  /* Spacing for cleaner look */
-  border-radius: 5px;  /* Slightly rounded corners */
-  border: 1px solid #ccc;
-  font-size: 1rem;
-  width: 100%;  /* Full width inputs */
-  transition: border-color 0.3s ease;
-  background-color: rgba(255, 255, 255, 0.95);
-}
-
-/* Focus effects for input */
-.form-group input:focus,
-.form-group select:focus {
-  outline: none;
-  border-color: #333;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);  /* Subtle shadow on focus */
-}
-
-/* Button container */
-.form-buttons {
-  display: flex;
-  justify-content: space-between;  /* Cancel on left, Reserve on right */
+form input,
+form select,
+form textarea {  /* Added textarea styling */
   width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+  background-color: #fff;
 }
 
-/* Cancel button */
-.modern-cancel-btn {
-  background-color: #333;  /* Updated background color */
+form input:focus,
+form select:focus,
+form textarea:focus {  /* Focus state for textarea */
+  border-color: #f4ce14;  /* Little Lemon theme color */
+  outline: none;
+  box-shadow: 0 0 5px rgba(244, 206, 20, 0.5); /* Slight glow effect on focus */
+}
+
+/* Special Request Textarea */
+form textarea {
+  resize: vertical;  /* Allow vertical resizing */
+  min-height: 120px;  /* Set a minimum height */
+  max-height: 300px;  /* Set a maximum height */
+  line-height: 1.5;  /* Increase line spacing */
+}
+.error-input {
+  border-color: red;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: -15px;
+  margin-bottom: 20px;
+}
+
+.form-button-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;  /* Add space between the two buttons */
+}
+
+.cancel-button,
+.submit-button {
+  width: 48%;  /* Set both buttons to take up 48% of the container width */
+  padding: 15px;  /* Increase padding for a larger clickable area */
+  font-size: 16px;  /* Ensure text size is readable */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center;  /* Ensure button text is centered */
+}
+
+.cancel-button {
+  background-color: #e74c3c;
   color: white;
-  padding: 10px 20px;
-  border-radius: 8px;  /* Rounded corners */
   border: none;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  width: 45%;  /* Adjusted button width */
-  text-align: center;
 }
 
-.modern-cancel-btn:hover {
-  background-color: #000;
+.cancel-button:hover {
+  background-color: #c0392b;
 }
 
-/* Reserve button */
-.modern-submit-btn {
-  background-color: #F4CE14;  /* Darker background for contrast */
+.submit-button {
+  background-color: #f4ce14;
   color: #333;
-  padding: 10px 20px;
-  border-radius: 8px;
   border: none;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  width: 45%;  /* Adjusted button width */
-  text-align: center;
 }
 
-.modern-submit-btn:hover {
-  background-color: #e1b912;  /* Darker hover effect */
+.submit-button:hover {
+  background-color: #e1b912;
+}
+/* Footer styling */
+footer {
+  padding: 20px;
+  background-color: #f4f4f4;
+  text-align: center;
+  margin-top: 50px;
+}
+
+footer p {
+  margin: 0;
+  font-size: 14px;
+  color: #333;
 }

@@ -1,32 +1,30 @@
-import menuIcon from '../assets/🦆 icon _hamburger menu_.svg';  // Import your menu dropdown SVG
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';  // Import Link from react-router-dom
-import '../styles/Header.css';  // Assuming you have a separate CSS file for styling
+import { Link } from 'react-router-dom'; // If using React Router for navigation
+import '../styles/Nav.css'; // Import CSS for styling
+import HamburgerIcon from '../assets/🦆 icon _hamburger menu.svg';
+import CloseIcon from '../assets/🦆 icon _hamburger menu.svg';
 
-
-function Nav() {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);  // Toggle the menu open/close state
-  };
+const Nav = () => {
+  const [isMobile, setIsMobile] = useState(false);
 
   return (
-    <nav className="nav">
-      <div className="menu-toggle" onClick={toggleMenu}>
-        <img src={menuIcon} alt="Menu" />
-      </div>
-
-      <ul className={`nav-list ${isOpen ? 'open' : ''}`}>  {/* Add 'open' class based on state */}
-        <li><Link to="/">Home</Link></li>  {/* Home link navigates to homepage */}
-        <li><a href="#about">About</a></li>
-        <li><a href="#menu">Menu</a></li>
-        <li><a href="#reservations">Reservations</a></li>
-        <li><a href="#order">Order Online</a></li>
-        <li><a href="#login">Login</a></li>
+    <nav className={`nav ${isMobile ? 'mobile' : ''}`}>
+      <ul className="nav-links">
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/about">About</Link></li>
+        <li><Link to="/menu">Menu</Link></li>
+        <li><Link to="/reservations">Reservations</Link></li>
+        <li><Link to="/order">Order Online</Link></li>
+        <li><Link to="/login">Login</Link></li>
       </ul>
+      <button 
+        className="mobile-menu-icon" 
+        onClick={() => setIsMobile(!isMobile)}
+      >
+        <img src={isMobile ? CloseIcon : HamburgerIcon} alt="Menu Icon" />
+      </button>
     </nav>
   );
-}
+};
 
 export default Nav;
